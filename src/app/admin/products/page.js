@@ -1,13 +1,8 @@
 import AdminProductsClient from './AdminProductsClient';
-
-async function getProducts() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/products`, { cache: 'no-store' });
-  if (!res.ok) return [];
-  return res.json();
-}
+import { getDbProducts } from '@/lib/db-actions';
 
 export default async function AdminProductsPage() {
-  const products = await getProducts();
+  const products = await getDbProducts();
 
   return (
     <div className="container" style={{ padding: '2rem 0' }}>

@@ -1,9 +1,8 @@
 import AdminProductForm from '@/components/AdminProductForm';
+import { getDbProductById } from '@/lib/db-actions';
 
 async function getProduct(id) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/products/${id}`, { cache: 'no-store' });
-  if (!res.ok) return null;
-  return res.json();
+  return await getDbProductById(id);
 }
 
 export default async function EditProductPage({ params }) {
@@ -27,7 +26,7 @@ export default async function EditProductPage({ params }) {
         <h1 style={{ fontSize: '2.5rem', fontWeight: '800' }}>Edit Product</h1>
         <p style={{ color: 'var(--text-muted)' }}>Updating: {product.title}</p>
       </div>
-      
+
       <AdminProductForm initialData={initialData} isEditing={true} />
     </div>
   );

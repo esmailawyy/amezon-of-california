@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { Package, Plus, MessageSquare, TrendingUp } from 'lucide-react';
 
+import { getDbProducts } from '@/lib/db-actions';
+
 async function getStats() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/products`, { cache: 'no-store' });
-  const products = await res.json();
+  const products = await getDbProducts();
   
   return {
     totalProducts: products.length,

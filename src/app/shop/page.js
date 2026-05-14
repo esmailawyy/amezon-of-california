@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import ShopClient from './ShopClient';
 
+import { getDbProducts } from '@/lib/db-actions';
+
 async function getProducts() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/products`, { cache: 'no-store' });
-  if (!res.ok) return [];
-  return res.json();
+  return await getDbProducts();
 }
 
 export const metadata = {

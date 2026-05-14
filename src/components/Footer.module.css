@@ -1,0 +1,112 @@
+.footer {
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border);
+  padding-top: 4rem;
+  margin-top: 4rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.logoAmazon { color: var(--foreground); }
+.logoOf { color: var(--accent); font-size: 1.1rem; }
+.logoCalifornia { color: var(--accent); }
+
+.tagline {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.links h3, .newsletter h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.links a {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+.newsletter p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--background);
+  color: var(--foreground);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.bottom {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.usaFlag {
+  height: 20px;
+  width: auto;
+  opacity: 0.8; /* Increased opacity for better visibility */
+  transition: opacity 0.3s ease;
+}
+
+.usaFlag:hover {
+  opacity: 1;
+}
+
+
+
+@media (max-width: 900px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+}

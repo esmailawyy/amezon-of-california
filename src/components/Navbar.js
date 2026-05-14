@@ -54,21 +54,21 @@ export default function Navbar() {
           <Link 
             href="/shop" 
             onClick={() => setIsMenuOpen(false)}
-            className={pathname === '/shop' ? styles.activeLink : ''}
+            className={pathname.startsWith('/shop') ? styles.activeLink : ''}
           >
             Shop
           </Link>
           <Link 
             href="/about" 
             onClick={() => setIsMenuOpen(false)}
-            className={pathname === '/about' ? styles.activeLink : ''}
+            className={pathname.startsWith('/about') ? styles.activeLink : ''}
           >
             About
           </Link>
           <Link 
             href="/contact" 
             onClick={() => setIsMenuOpen(false)}
-            className={pathname === '/contact' ? styles.activeLink : ''}
+            className={pathname.startsWith('/contact') ? styles.activeLink : ''}
           >
             Contact
           </Link>
